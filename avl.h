@@ -274,15 +274,44 @@ namespace myAVLTree {
 				else  // means curr is a fully internal node with 2 childern.
 				{
 					spNode par{ curr->parent };
-					spNode smallest{ curr->right };
+					spNode min{ curr->right };
 					// in this case: 
 					// 1- find the smallest node  ,min, in the right subtree.
-					
-
+					while (min->left != nullptr)
+					{
+						min = min->left;
+					}
 					// 2- swap the data in curr and min
-					
+
+					curr->data = min->data;
+					//min->parent = curr->parent;
+					//min->left = curr->left;
+					//min->right = curr->right;
 					
 					// 3- delete min from right subtree.
+					
+					if (min->left == nullptr && min->right == nullptr)
+					{
+						if (min->parent->left == min)
+						{
+							min->parent->left = nullptr;
+						}
+						else
+						{
+							min->parent->right = nullptr;
+						}
+					}
+					if (min->right != nullptr)
+					{
+						min->right->parent = min->parent;
+						min->parent->left = min->right;
+					}
+
+					min.reset();
+					min = nullptr;
+					//curr->left = nullptr;
+					//curr->right = nullptr;
+					//curr->pa
 				}
 			}
 			count--;

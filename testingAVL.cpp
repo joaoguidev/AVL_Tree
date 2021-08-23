@@ -16,7 +16,7 @@ int main(int argc, char** argv)
 	srand(555);
 	vector<int> numVec;
 	intLessAVLTree.clear();
-	for (int i = 0; i < 11; ++i)
+	for (int i = 0; i < 15; ++i)
 	{
 		numVec.push_back(rand() % 100 - 50);
 		//intLessAVLTree.print();
@@ -37,19 +37,18 @@ int main(int argc, char** argv)
 	std::cout << "Iteractive height: " << intLessAVLTree.getHeightIterative() << "\n";
 	std::cout << "Recursive height: " << intLessAVLTree.getHeightRecursive() << "\n";
 
-	intLessAVLTree.remove(numVec.at(5));
+	//intLessAVLTree.remove(numVec.at(1));
+	//intLessAVLTree.printLevels();
+
+	cout << "test deleting "<<numVec[10]<<"  and print:\n";
+	intLessAVLTree.remove(numVec[10]);
 	intLessAVLTree.printLevels();
-
-
-
-	//cout << "test deleting "<<numVec[10]<<"  and print:\n";
-	//intLessAVLTree.remove(numVec[10]);
-	//intLessAVLTree.printLevels();
-	//cout << "test deleting " << numVec[0] << "  and print:\n";
-	//intLessAVLTree.remove(numVec[0]);
-	//intLessAVLTree.printLevels();
-	//cout << "test deleting 101(not in tree)  and print:\n";
-	//intLessAVLTree.remove(101);
+	cout << "test deleting " << numVec[0] << "  and print:\n";
+	intLessAVLTree.remove(numVec[0]);
+	intLessAVLTree.printLevels();
+	cout << "test deleting 101(not in tree)  and print:\n";
+	intLessAVLTree.remove(101);
+	intLessAVLTree.printLevels();
 
 
 	/*
