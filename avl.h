@@ -246,7 +246,7 @@ namespace myAVLTree {
 				else
 					par->right = nullptr;
 
-				//curr.reset();
+				curr.reset();
 				curr = nullptr;  // curr.reset();
 				
 			}
@@ -259,25 +259,35 @@ namespace myAVLTree {
 					if (curr->right != nullptr)
 					{
 						rotateLeft(curr);
+						par->left = curr->parent;
+						curr->parent->left = nullptr;
 						
 					}
 					else {
 						rotateRight(curr);
+						par->left = curr->parent;
+						curr->parent->right = nullptr;
 					}
-					cur.reset();
-					cur = nullptr;
-		
+					curr.reset();
+					curr = nullptr;
 				}
 				else  // means curr is a fully internal node with 2 childern.
 				{
+					spNode par{ curr->parent };
+					spNode smallest{ curr->right };
 					// in this case: 
 					// 1- find the smallest node  ,min, in the right subtree.
+					
+
 					// 2- swap the data in curr and min
+					
+					
 					// 3- delete min from right subtree.
-					std::cout << "TODO: student implement remove case 3\n";
 				}
 			}
+			count--;
 			balance(par);
+
 
 			return true;
 

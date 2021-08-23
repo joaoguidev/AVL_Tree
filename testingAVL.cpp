@@ -24,6 +24,7 @@ int main(int argc, char** argv)
 		intLessAVLTree.insert(numVec.at(i));
 		cout << "i " << i  <<": " << numVec[i] << "\n";
 	}
+	
 	intLessAVLTree.printLevels();
 	cout << endl << endl;
 
@@ -36,7 +37,7 @@ int main(int argc, char** argv)
 	std::cout << "Iteractive height: " << intLessAVLTree.getHeightIterative() << "\n";
 	std::cout << "Recursive height: " << intLessAVLTree.getHeightRecursive() << "\n";
 
-	intLessAVLTree.remove(numVec.at(3));
+	intLessAVLTree.remove(numVec.at(5));
 	intLessAVLTree.printLevels();
 
 
