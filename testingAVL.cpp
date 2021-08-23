@@ -76,7 +76,7 @@ Bellow is the starting code for loading testData and build the tree.​
 	//}
 	//testAVLTree.printLevels();
 	//// here goes your steps 2 to 4 above
-	//testAVLTree.printLevels(4);
+	//testAVLTree.printLevels(4);//------------Printing 4 levels
 	//testAVLTree.clear();
 
 	return 0;
